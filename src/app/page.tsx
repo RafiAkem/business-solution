@@ -57,11 +57,11 @@ export default function Home() {
           <h2 className="text-3xl font-bold text-center mb-10">Apa Kata Klien Kami</h2>
           <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="bg-white p-6 rounded-lg shadow-md">
-              <p className="mb-4">"Layanan konsultasi mereka sangat membantu bisnis kami berkembang."</p>
+              <p className="mb-4">&ldquo;Layanan konsultasi mereka sangat membantu bisnis kami berkembang.&rdquo;</p>
               <cite className="font-semibold">- John Doe, CEO PT XYZ</cite>
             </div>
             <div className="bg-white p-6 rounded-lg shadow-md">
-              <p className="mb-4">"Tim yang profesional dan solusi yang diberikan sangat tepat sasaran."</p>
+              <p className="mb-4">&ldquo;Tim yang profesional dan solusi yang diberikan sangat tepat sasaran.&rdquo;</p>
               <cite className="font-semibold">- Jane Smith, Founder ABC Corp</cite>
             </div>
           </div>
