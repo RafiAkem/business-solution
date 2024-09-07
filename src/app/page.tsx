@@ -1,100 +1,83 @@
-import Image from "next/image";
+import Navbar from '@/components/Navbar';
+import WordFadeIn from "@/components/magicui/word-fade-in";
+import DotPattern from "@/components/magicui/dot-pattern";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+    <div className="flex flex-col min-h-screen font-[family-name:var(--font-geist-sans)]">
+      <Navbar />
+      
+      <main className="flex-grow">
+        <section id="beranda" className="relative bg-gradient-to-b from-gray-50 to-gray-100 text-center py-32 overflow-hidden">
+          <DotPattern className="absolute inset-0 opacity-10" />
+          <div className="relative z-10">
+            <WordFadeIn
+              words="Atalla Solusi Bisnis Terbaik untuk Anda"
+              className="mb-6 text-4xl md:text-6xl font-bold text-gray-800"
             />
-            Deploy now
+            <p className="mb-8 text-xl text-gray-600 max-w-2xl mx-auto">
+              Kami membantu bisnis Anda berkembang dengan konsultasi profesional yang inovatif dan terpercaya
+            </p>
+            <div className="flex justify-center space-x-4">
+              <a 
+                href="#hubungi" 
+                className="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-8 py-3 rounded-full hover:from-blue-600 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+              >
+                Konsultasi Sekarang
+              </a>
+              <a 
+                href="#layanan" 
+                className="bg-white text-blue-600 px-8 py-3 rounded-full hover:bg-gray-100 transition-all duration-300 shadow-md hover:shadow-lg"
+              >
+                Pelajari Layanan Kami
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <section id="layanan" className="py-16">
+          <h2 className="text-3xl font-bold text-center mb-10">Layanan Kami</h2>
+          <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="bg-white p-6 rounded-lg shadow-md">
+              <h3 className="text-xl font-semibold mb-2">Konsultasi Strategi</h3>
+              <p>Kami membantu Anda merencanakan strategi bisnis yang efektif</p>
+            </div>
+            <div className="bg-white p-6 rounded-lg shadow-md">
+              <h3 className="text-xl font-semibold mb-2">Analisis Pasar</h3>
+              <p>Kami melakukan riset pasar untuk memahami target audiens Anda</p>
+            </div>
+            <div className="bg-white p-6 rounded-lg shadow-md">
+              <h3 className="text-xl font-semibold mb-2">Optimasi Proses</h3>
+              <p>Kami membantu mengoptimalkan proses bisnis Anda untuk efisiensi maksimal</p>
+            </div>
+          </div>
+        </section>
+
+        <section id="testimonial" className="bg-gray-100 py-16">
+          <h2 className="text-3xl font-bold text-center mb-10">Apa Kata Klien Kami</h2>
+          <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="bg-white p-6 rounded-lg shadow-md">
+              <p className="mb-4">"Layanan konsultasi mereka sangat membantu bisnis kami berkembang."</p>
+              <cite className="font-semibold">- John Doe, CEO PT XYZ</cite>
+            </div>
+            <div className="bg-white p-6 rounded-lg shadow-md">
+              <p className="mb-4">"Tim yang profesional dan solusi yang diberikan sangat tepat sasaran."</p>
+              <cite className="font-semibold">- Jane Smith, Founder ABC Corp</cite>
+            </div>
+          </div>
+        </section>
+
+        <section id="hubungi" className="py-16 text-center">
+          <h2 className="text-3xl font-bold mb-4">Hubungi Kami</h2>
+          <p className="mb-8">Siap untuk mengembangkan bisnis Anda? Hubungi kami sekarang!</p>
+          <a href="/form" className="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-8 py-3 rounded-full hover:from-blue-600 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+            Isi Formulir Konsultasi
           </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
+        </section>
       </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+
+      <footer className="bg-gray-800 text-white text-center py-4">
+        <p>&copy; 2023 Atalla. Hak Cipta Dilindungi.</p>
       </footer>
     </div>
   );
