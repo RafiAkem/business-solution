@@ -1,5 +1,7 @@
 import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
 import WordFadeIn from "@/components/magicui/word-fade-in";
+import WordRotate from "@/components/magicui/word-rotate";
 import DotPattern from "@/components/magicui/dot-pattern";
 
 export default function Home() {
@@ -15,10 +17,20 @@ export default function Home() {
               words="Atalla Solusi Bisnis Terbaik untuk Anda"
               className="mb-6 text-4xl md:text-6xl font-bold text-gray-800"
             />
-            <p className="mb-8 text-xl text-gray-600 max-w-2xl mx-auto">
-              Kami membantu bisnis Anda berkembang dengan konsultasi profesional yang inovatif dan terpercaya
+            <p className="mb-4 text-xl text-gray-600 max-w-2xl mx-auto">
+              NRP siap membantu Anda dalam Masalah{' '}
+              <WordRotate
+                words={[
+                  "Penerbitan Legalitas Usaha",
+                  "Laporan perpajakan dan akuntansi",
+                  "Penyewaan kantor virtual & ruang kantor",
+                  "Branding usaha"
+                ]}
+                className="inline-block text-blue-600"
+                duration={3000}
+              />
             </p>
-            <div className="flex justify-center space-x-4">
+            <div className="flex justify-center space-x-4 mt-8">
               <a 
                 href="#hubungi" 
                 className="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-8 py-3 rounded-full hover:from-blue-600 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
@@ -76,9 +88,7 @@ export default function Home() {
         </section>
       </main>
 
-      <footer className="bg-gray-800 text-white text-center py-4">
-        <p>&copy; 2023 Atalla. Hak Cipta Dilindungi.</p>
-      </footer>
+      <Footer />
     </div>
   );
 }

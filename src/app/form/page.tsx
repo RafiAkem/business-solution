@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
 import DotPattern from "@/components/magicui/dot-pattern";
 
 export default function Form() {
@@ -97,9 +98,7 @@ export default function Form() {
           </div>
         </div>
       </main>
-      <footer className="bg-gray-800 text-white text-center py-4">
-        <p>&copy; 2023 Atalla. Hak Cipta Dilindungi.</p>
-      </footer>
+      <Footer />
     </div>
   );
 }
