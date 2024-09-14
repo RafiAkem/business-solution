@@ -3,7 +3,6 @@
 import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import DotPattern from "@/components/magicui/dot-pattern";
 
 export default function Form() {
   const [nama, setNama] = useState("");
@@ -24,11 +23,10 @@ export default function Form() {
   return (
     <div className="flex flex-col min-h-screen">
       <Navbar />
-      <main className="flex-grow relative bg-[rgb(27,87,197)] py-16">
-        <DotPattern className="absolute inset-0 opacity-20 text-gray-400" />
-        <div className="container mx-auto px-4 relative z-10">
-          <h1 className="text-4xl font-bold mb-8 text-center text-white">
-            Hubungi Kami
+      <main className="flex-grow bg-gradient-to-b from-[rgb(27,87,197)] to-[rgb(13,110,253)] text-white">
+        <div className="container mx-auto px-4 py-16">
+          <h1 className="text-4xl font-bold mb-8 text-center">
+            Konsultasi Form
           </h1>
           <div className="flex flex-col md:flex-row justify-between items-start gap-8">
             {/* Informasi Kontak */}

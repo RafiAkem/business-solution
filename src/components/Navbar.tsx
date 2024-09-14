@@ -11,10 +11,7 @@ export default function Navbar() {
   const router = useRouter();
 
   useEffect(() => {
-    // Animasi Smooth Scroll
     document.documentElement.style.scrollBehavior = "smooth";
-
-    // Mengembalikan scroll behavior ke auto/normal
     return () => {
       document.documentElement.style.scrollBehavior = "auto";
     };
@@ -27,7 +24,9 @@ export default function Navbar() {
     e.preventDefault();
     setIsMenuOpen(false);
 
-    if (href.startsWith("/#")) {
+    if (href === "/") {
+      router.push("/");
+    } else if (href.startsWith("/#")) {
       const targetId = href.substring(2);
       const targetElement = document.getElementById(targetId);
       if (targetElement) {

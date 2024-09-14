@@ -3,7 +3,6 @@ import Footer from "@/components/Footer";
 import WordFadeIn from "@/components/magicui/word-fade-in";
 import WordRotate from "@/components/magicui/word-rotate";
 import Link from "next/link";
-import { BiPhoneCall } from "react-icons/bi";
 import {
   FaFileAlt,
   FaCalculator,
@@ -138,20 +137,13 @@ export default function Home() {
               Anda. Tim ahli EasyIzin siap membantu Anda mengatasi setiap
               tantangan!
             </p>
-            <div className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-6">
+            <div className="flex justify-center">
               <Link
                 href="/form"
                 className="bg-white text-[rgb(27,87,197)] px-8 py-4 rounded-full text-lg font-bold hover:bg-yellow-300 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 pulse-animation"
               >
                 Konsultasi Gratis Sekarang
               </Link>
-              <a
-                href="tel:+6281234567890"
-                className="flex items-center bg-transparent border-2 border-white text-white px-8 py-4 rounded-full text-lg font-bold hover:bg-white hover:text-[rgb(27,87,197)] transition-all duration-300"
-              >
-                <BiPhoneCall className="mr-2" />
-                +62 812-3456-7890
-              </a>
             </div>
             <p className="mt-8 text-sm opacity-75">
               Kami siap membantu Anda 24/7. Hubungi kami sekarang dan raih
