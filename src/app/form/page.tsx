@@ -1,8 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
 
 export default function Form() {
   const [nama, setNama] = useState("");
@@ -13,8 +11,8 @@ export default function Form() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const preMessage =
-      "Halo, saya tertarik dengan layanan konsultasi Atalla. Berikut adalah detail saya:";
-    const whatsappUrl = `https://wa.me/6281532700888?text=${encodeURIComponent(
+      "Halo, saya tertarik dengan layanan konsultasi EasyIzin. Berikut adalah detail saya:";
+    const whatsappUrl = `https://wa.me/6289517889100?text=${encodeURIComponent(
       `${preMessage}\n\nNama: ${nama}\nEmail: ${email}\nNomor HP: ${nomorHP}\nPesan: ${pesan}\n\nMohon informasi lebih lanjut. Terima kasih!`
     )}`;
     window.open(whatsappUrl, "_blank");
@@ -22,7 +20,6 @@ export default function Form() {
 
   return (
     <div className="flex flex-col min-h-screen">
-      <Navbar />
       <main className="flex-grow bg-gradient-to-b from-[rgb(27,87,197)] to-[rgb(13,110,253)] text-white">
         <div className="container mx-auto px-4 py-16">
           <h1 className="text-4xl font-bold mb-8 text-center">
@@ -137,7 +134,6 @@ export default function Form() {
           </div>
         </div>
       </main>
-      <Footer />
     </div>
   );
 }

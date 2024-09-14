@@ -1,5 +1,3 @@
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
 import WordFadeIn from "@/components/magicui/word-fade-in";
 import WordRotate from "@/components/magicui/word-rotate";
 import Link from "next/link";
@@ -12,9 +10,7 @@ import {
 
 export default function Home() {
   return (
-    <div className="flex flex-col min-h-screen font-sans">
-      <Navbar />
-
+    <div className="flex flex-col min-h-screen font-poppins">
       <main className="flex-grow">
         <section
           id="beranda"
@@ -145,7 +141,7 @@ export default function Home() {
                 Konsultasi Gratis Sekarang
               </Link>
               <a
-                href="https://wa.me/your_whatsapp_number"
+                href="https://wa.me/089517889100"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-green-500 text-white px-8 py-4 rounded-full text-lg font-bold hover:bg-green-600 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
@@ -160,8 +156,6 @@ export default function Home() {
           </div>
         </section>
       </main>
-
-      <Footer />
     </div>
   );
 }

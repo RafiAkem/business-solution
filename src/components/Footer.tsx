@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { FaInstagram, FaArrowUp } from "react-icons/fa";
+import { FaInstagram, FaArrowUp, FaTiktok, FaFacebookF } from "react-icons/fa";
 
 export default function Footer() {
   const scrollToTop = () => {
@@ -10,9 +10,41 @@ export default function Footer() {
   };
 
   return (
-    <footer className="w-full bg-[#0081fd] text-white py-8">
+    <footer className="bg-[rgb(27,87,197)] text-white py-8">
       <div className="container mx-auto px-4">
-        <div className="flex flex-wrap justify-between items-center">
+        <div className="flex flex-wrap justify-between">
+          <div className="w-full md:w-1/3 mb-6 md:mb-0">
+            <h3 className="text-xl font-bold mb-4">EasyIzin</h3>
+            <p className="mb-4">
+              Solusi terpercaya untuk perizinan dan legalitas bisnis Anda.
+            </p>
+            <div className="flex space-x-4">
+              <a
+                href="https://instagram.com/easyizin"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-gray-300"
+              >
+                <FaInstagram size={24} />
+              </a>
+              <a
+                href="https://www.tiktok.com/@easyizinid"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-gray-300"
+              >
+                <FaTiktok size={24} />
+              </a>
+              <a
+                href="https://www.facebook.com/profile.php?id=61565388835649&mibextid=JRoKGi"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-gray-300"
+              >
+                <FaFacebookF size={24} />
+              </a>
+            </div>
+          </div>
           {/* Logo and company info */}
           <div className="flex items-center mb-4 md:mb-0">
             <Image
@@ -52,8 +84,8 @@ export default function Footer() {
         </div>
 
         {/* Copyright */}
-        <div className="text-center mt-6 text-sm opacity-60">
-          © 2024 EasyIzin. RafiAkem Rights Reserved.
+        <div className="mt-8 text-center">
+          <p>&copy; 2023 EasyIzin. All rights reserved.</p>
         </div>
       </div>
     </footer>
