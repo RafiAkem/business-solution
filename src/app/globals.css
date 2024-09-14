@@ -67,3 +67,57 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Add this new class for DM Sans */
+.font-dm-sans {
+  font-family: var(--font-dm-sans), sans-serif;
+}
+
+/* Add this new class for Source Sans Pro */
+.font-source-sans-pro {
+  font-family: var(--font-source-sans-pro), sans-serif;
+}
+
+/* Remove the background animation styles */
+
+/* Update the hover underline animation */
+.hover-underline-animation {
+  display: inline-block;
+  position: relative;
+  color: white;
+}
+
+.hover-underline-animation::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: white;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.hover-underline-animation:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+/* Add the pulse animation */
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(255, 255, 255, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+  }
+}
+
+.pulse-animation {
+  animation: pulse 2s infinite;
+}
