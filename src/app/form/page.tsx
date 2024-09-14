@@ -76,7 +76,7 @@ export default function Form() {
                   value={nama}
                   onChange={(e) => setNama(e.target.value)}
                   required
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white/50"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white/50 text-black"
                 />
               </div>
               <div className="mb-6">
@@ -92,7 +92,7 @@ export default function Form() {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white/50"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white/50 text-black"
                 />
               </div>
               <div className="mb-6">
@@ -108,7 +108,7 @@ export default function Form() {
                   value={nomorHP}
                   onChange={(e) => setNomorHP(e.target.value)}
                   required
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white/50"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white/50 text-black"
                 />
               </div>
               <div className="mb-6">
@@ -123,7 +123,7 @@ export default function Form() {
                   value={pesan}
                   onChange={(e) => setPesan(e.target.value)}
                   required
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white/50"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white/50 text-black"
                   rows={4}
                 ></textarea>
               </div>

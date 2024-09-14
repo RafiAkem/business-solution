@@ -137,13 +137,21 @@ export default function Home() {
               Anda. Tim ahli EasyIzin siap membantu Anda mengatasi setiap
               tantangan!
             </p>
-            <div className="flex justify-center">
+            <div className="flex justify-center space-x-4">
               <Link
                 href="/form"
                 className="bg-white text-[rgb(27,87,197)] px-8 py-4 rounded-full text-lg font-bold hover:bg-yellow-300 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 pulse-animation"
               >
                 Konsultasi Gratis Sekarang
               </Link>
+              <a
+                href="https://wa.me/your_whatsapp_number"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-green-500 text-white px-8 py-4 rounded-full text-lg font-bold hover:bg-green-600 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+              >
+                Hubungi via WhatsApp
+              </a>
             </div>
             <p className="mt-8 text-sm opacity-75">
               Kami siap membantu Anda 24/7. Hubungi kami sekarang dan raih
