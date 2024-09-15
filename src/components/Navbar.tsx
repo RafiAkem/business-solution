@@ -106,7 +106,7 @@ export default function Navbar() {
               { href: "/#layanan", label: "LAYANAN KAMI" },
               { href: "/#testimonial", label: "TESTIMONI" },
               { href: "/artikel", label: "ARTIKEL" },
-              { href: "/#tentang", label: "TENTANG KAMI" },
+              { href: "/tentang-kami", label: "TENTANG KAMI" },
             ].map(({ href, label }) => (
               <li key={href}>
                 <Link

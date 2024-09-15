@@ -1,11 +1,8 @@
 import Link from "next/link";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
 
 export default function NotFound() {
   return (
     <div className="flex flex-col min-h-screen">
-      <Navbar />
       <main className="flex-grow flex items-center justify-center bg-[rgb(27,87,197)]">
         <div className="text-center">
           <h1 className="text-6xl font-bold text-white mb-4">404</h1>
@@ -18,7 +15,6 @@ export default function NotFound() {
           </Link>
         </div>
       </main>
-      <Footer />
     </div>
   );
 }

@@ -6,12 +6,18 @@ import {
   FaCalculator,
   FaPaintBrush,
   FaBuilding,
+  FaClock,
+  FaUsers,
+  FaPuzzlePiece,
+  FaHeadset,
 } from "react-icons/fa";
+import { BentoCard, BentoGrid } from "@/components/magicui/bento-grid";
 
 export default function Home() {
   return (
-    <div className="flex flex-col min-h-screen font-poppins">
+    <div className="flex flex-col min-h-screen font-sans">
       <main className="flex-grow">
+        {/* Hero Section */}
         <section
           id="beranda"
           className="relative text-center py-32 bg-[rgb(27,87,197)]"
@@ -47,6 +53,128 @@ export default function Home() {
               >
                 Pelajari Layanan Kami
               </a>
+            </div>
+          </div>
+        </section>
+
+        {/* About EasyIzin Section */}
+        <section id="about" className="py-16 bg-white">
+          <div className="container mx-auto px-4">
+            <div className="flex flex-col md:flex-row items-center">
+              <div className="md:w-2/3 mb-8 md:mb-0">
+                {/* Increased height of the media player */}
+                <div
+                  className="aspect-w-16 aspect-h-9 bg-gray-200 rounded-lg max-w-3xl mx-auto"
+                  style={{ height: "450px" }}
+                >
+                  <iframe
+                    src="https://www.youtube.com/embed/your-video-id"
+                    frameBorder="0"
+                    allow="autoplay; encrypted-media"
+                    allowFullScreen
+                    className="w-full h-full"
+                  ></iframe>
+                </div>
+              </div>
+              <div className="md:w-1/2 md:pl-12">
+                <h2 className="text-3xl font-bold mb-4">Apa itu EasyIzin?</h2>
+                <p className="text-gray-600 mb-4 text-xl">
+                  EasyIzin adalah platform inovatif yang menyederhanakan proses
+                  perizinan dan legalitas bisnis di Indonesia. Kami hadir untuk
+                  membantu para pengusaha dan pemilik bisnis mengatasi kerumitan
+                  birokrasi dengan solusi yang efisien dan terpercaya.
+                </p>
+                <p className="text-gray-600 text-xl">
+                  Dengan tim ahli kami yang berpengalaman, EasyIzin menawarkan
+                  layanan komprehensif mulai dari pengurusan dokumen legal,
+                  konsultasi pajak, hingga penyediaan kantor virtual. Kami
+                  berkomitmen untuk menjadi mitra terpercaya dalam perjalanan
+                  kesuksesan bisnis Anda.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Why Choose EasyIzin Section */}
+        <section id="why-choose" className="py-16 bg-white">
+          <div className="container mx-auto px-4">
+            <div className="flex flex-col lg:flex-row items-start gap-12">
+              <div className="lg:w-1/4">
+                <h2 className="text-3xl font-bold mb-4 text-gray-800">
+                  Kenapa Harus Memilih EasyIzin?
+                </h2>
+                <p className="text-lg text-gray-600 mb-6">
+                  Kami menyediakan solusi terbaik untuk kebutuhan perizinan
+                  bisnis Anda dengan keunggulan-keunggulan yang tidak ditemukan
+                  di tempat lain. EasyIzin hadir untuk mempermudah proses
+                  perizinan dan legalitas bisnis Anda.
+                </p>
+                <Link
+                  href="/form"
+                  className="inline-flex items-center bg-blue-500 text-white px-6 py-3 rounded-full text-lg font-bold hover:bg-blue-600 transition-all duration-300"
+                >
+                  Konsultasi Sekarang
+                </Link>
+              </div>
+              <div className="lg:w-3/4">
+                <BentoGrid className="grid-cols-3 grid-rows-2 gap-4">
+                  {[
+                    {
+                      Icon: FaClock,
+                      name: "Proses Cepat",
+                      description:
+                        "Optimalisasi setiap tahapan untuk proses perizinan yang cepat.",
+                      background: (
+                        <div className="absolute inset-0 bg-blue-100 opacity-20 rounded-xl" />
+                      ),
+                      className: "col-span-1 row-span-1",
+                    },
+                    {
+                      Icon: FaUsers,
+                      name: "Tim Ahli",
+                      description:
+                        "Didukung oleh profesional berpengalaman dalam perizinan bisnis.",
+                      background: (
+                        <div className="absolute inset-0 bg-green-100 opacity-20 rounded-xl" />
+                      ),
+                      className: "col-span-1 row-span-1",
+                    },
+                    {
+                      Icon: FaPuzzlePiece,
+                      name: "Solusi Lengkap",
+                      description:
+                        "Dari perizinan hingga konsultasi pajak, semua dalam satu atap.",
+                      background: (
+                        <div className="absolute inset-0 bg-purple-100 opacity-20 rounded-xl" />
+                      ),
+                      className: "col-span-1 row-span-1",
+                    },
+                    {
+                      Icon: FaCalculator,
+                      name: "Harga Transparan",
+                      description:
+                        "Harga yang jelas dan kompetitif tanpa biaya tersembunyi.",
+                      background: (
+                        <div className="absolute inset-0 bg-yellow-100 opacity-20 rounded-xl" />
+                      ),
+                      className: "col-span-1 row-span-1",
+                    },
+                    {
+                      Icon: FaHeadset,
+                      name: "Dukungan 24/7",
+                      description:
+                        "Tim kami siap membantu Anda kapan pun dibutuhkan. Kami berkomitmen untuk memberikan pelayanan terbaik setiap saat.",
+                      background: (
+                        <div className="absolute inset-0 bg-red-100 opacity-20 rounded-xl" />
+                      ),
+                      className: "col-span-2 row-span-1",
+                    },
+                  ].map((feature) => (
+                    <BentoCard key={feature.name} {...feature} />
+                  ))}
+                </BentoGrid>
+              </div>
             </div>
           </div>
         </section>
@@ -103,56 +231,105 @@ export default function Home() {
           <h2 className="text-3xl font-bold text-center mb-10">
             Apa Kata Klien Kami
           </h2>
-          <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="bg-white p-6 rounded-lg shadow-md">
-              <p className="mb-4">
-                &ldquo;Layanan konsultasi mereka sangat membantu bisnis kami
-                berkembang.&rdquo;
-              </p>
-              <cite className="font-semibold">- John Doe, CEO PT XYZ</cite>
+          <div className="container mx-auto px-4">
+            <div className="grid mb-8 border border-gray-200 rounded-lg shadow-sm md:mb-12 md:grid-cols-2 bg-white">
+              <figure className="flex flex-col items-center justify-center p-8 text-center bg-white border-b border-gray-200 rounded-t-lg md:rounded-t-none md:rounded-ss-lg md:border-e">
+                <blockquote className="max-w-2xl mx-auto mb-4 text-gray-900">
+                  <h3 className="text-lg font-semibold text-gray-900">
+                    Sangat Mudah Digunakan
+                  </h3>
+                  <p className="my-4">
+                    &quot;Jika Anda peduli dengan waktu Anda, saya sangat
+                    merekomendasikan layanan ini.&quot;
+                  </p>
+                </blockquote>
+                <figcaption className="flex items-center justify-center">
+                  <img
+                    className="rounded-full w-9 h-9"
+                    src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/karen-nelson.png"
+                    alt="profile picture"
+                  />
+                  <div className="space-y-0.5 font-medium text-left ms-3">
+                    <div>Budi Santoso</div>
+                    <div className="text-sm text-gray-500">
+                      CEO di PT Maju Bersama
+                    </div>
+                  </div>
+                </figcaption>
+              </figure>
+              <figure className="flex flex-col items-center justify-center p-8 text-center bg-white border-b border-gray-200 md:rounded-se-lg">
+                <blockquote className="max-w-2xl mx-auto mb-4 text-gray-900">
+                  <h3 className="text-lg font-semibold text-gray-900">
+                    Fondasi Solid untuk Bisnis
+                  </h3>
+                  <p className="my-4">
+                    &quot;EasyIzin memberikan dasar yang kuat untuk memulai dan
+                    mengembangkan bisnis kami dengan aman dan efisien.&quot;
+                  </p>
+                </blockquote>
+                <figcaption className="flex items-center justify-center">
+                  <img
+                    className="rounded-full w-9 h-9"
+                    src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/roberta-casas.png"
+                    alt="profile picture"
+                  />
+                  <div className="space-y-0.5 font-medium text-left ms-3">
+                    <div>Siti Rahma</div>
+                    <div className="text-sm text-gray-500">
+                      Founder di Kreasi Nusantara
+                    </div>
+                  </div>
+                </figcaption>
+              </figure>
+              <figure className="flex flex-col items-center justify-center p-8 text-center bg-white border-b border-gray-200 md:rounded-es-lg md:border-b-0 md:border-e">
+                <blockquote className="max-w-2xl mx-auto mb-4 text-gray-900">
+                  <h3 className="text-lg font-semibold text-gray-900">
+                    Proses yang Luar Biasa
+                  </h3>
+                  <p className="my-4">
+                    &quot;Layanan EasyIzin sangat membantu dalam menyelesaikan
+                    masalah perizinan yang rumit dengan cepat dan efisien.&quot;
+                  </p>
+                </blockquote>
+                <figcaption className="flex items-center justify-center">
+                  <img
+                    className="rounded-full w-9 h-9"
+                    src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/jese-leos.png"
+                    alt="profile picture"
+                  />
+                  <div className="space-y-0.5 font-medium text-left ms-3">
+                    <div>Andi Prasetyo</div>
+                    <div className="text-sm text-gray-500">
+                      Direktur di Tech Innovate
+                    </div>
+                  </div>
+                </figcaption>
+              </figure>
+              <figure className="flex flex-col items-center justify-center p-8 text-center bg-white border-gray-200 rounded-b-lg md:rounded-se-lg">
+                <blockquote className="max-w-2xl mx-auto mb-4 text-gray-900">
+                  <h3 className="text-lg font-semibold text-gray-900">
+                    Kolaborasi yang Efisien
+                  </h3>
+                  <p className="my-4">
+                    &quot;Tim EasyIzin sangat responsif dan profesional. Mereka
+                    benar-benar memahami kebutuhan bisnis kami.&quot;
+                  </p>
+                </blockquote>
+                <figcaption className="flex items-center justify-center">
+                  <img
+                    className="rounded-full w-9 h-9"
+                    src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/joseph-mcfall.png"
+                    alt="profile picture"
+                  />
+                  <div className="space-y-0.5 font-medium text-left ms-3">
+                    <div>Dewi Lestari</div>
+                    <div className="text-sm text-gray-500">
+                      Manager di Sustainable Solutions
+                    </div>
+                  </div>
+                </figcaption>
+              </figure>
             </div>
-            <div className="bg-white p-6 rounded-lg shadow-md">
-              <p className="mb-4">
-                &ldquo;Tim yang profesional dan solusi yang diberikan sangat
-                tepat sasaran.&rdquo;
-              </p>
-              <cite className="font-semibold">
-                - Jane Smith, Founder ABC Corp
-              </cite>
-            </div>
-          </div>
-        </section>
-
-        <section id="hubungi" className="py-24 bg-[rgb(27,87,197)] text-white">
-          <div className="container mx-auto px-4 text-center">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Siap Mengembangkan Bisnis Anda?
-            </h2>
-            <p className="text-xl mb-8 max-w-2xl mx-auto">
-              Jangan biarkan kerumitan birokrasi menghambat pertumbuhan bisnis
-              Anda. Tim ahli EasyIzin siap membantu Anda mengatasi setiap
-              tantangan!
-            </p>
-            <div className="flex justify-center space-x-4">
-              <Link
-                href="/form"
-                className="bg-white text-[rgb(27,87,197)] px-8 py-4 rounded-full text-lg font-bold hover:bg-yellow-300 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 pulse-animation"
-              >
-                Konsultasi Gratis Sekarang
-              </Link>
-              <a
-                href="https://wa.me/089517889100"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-green-500 text-white px-8 py-4 rounded-full text-lg font-bold hover:bg-green-600 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
-              >
-                Hubungi via WhatsApp
-              </a>
-            </div>
-            <p className="mt-8 text-sm opacity-75">
-              Kami siap membantu Anda 24/7. Hubungi kami sekarang dan raih
-              kesuksesan bersama EasyIzin!
-            </p>
           </div>
         </section>
       </main>
