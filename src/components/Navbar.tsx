@@ -13,6 +13,9 @@ export default function Navbar() {
   const router = useRouter();
   const pathname = usePathname();
 
+  const isHomePage = pathname === "/";
+  const isTentangKamiPage = pathname === "/tentang-kami";
+
   useEffect(() => {
     document.documentElement.style.scrollBehavior = "smooth";
     const handleScroll = () => {
@@ -55,10 +58,20 @@ export default function Navbar() {
   };
 
   return (
-    <>
+    <div className="relative">
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          isScrolled ? "bg-[rgb(27,87,197)]" : "bg-transparent"
+        className={`${
+          isHomePage
+            ? "fixed top-0 left-0 right-0 z-50 transition-all duration-300"
+            : isTentangKamiPage
+            ? "relative" // Change this line
+            : "fixed top-0 left-0 right-0 z-50"
+        } ${
+          isHomePage
+            ? isScrolled
+              ? "bg-[rgb(27,87,197)] bg-opacity-90 backdrop-blur-md"
+              : "bg-transparent"
+            : "bg-[rgb(27,87,197)]"
         }`}
       >
         <nav className="container mx-auto flex justify-between items-center p-4">
@@ -208,6 +221,6 @@ export default function Navbar() {
         </nav>
       </header>
       <FloatingWhatsApp />
-    </>
+    </div>
   );
 }

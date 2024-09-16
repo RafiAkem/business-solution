@@ -253,7 +253,7 @@ export default function Home() {
                   </p>
                 </blockquote>
                 <figcaption className="flex items-center justify-center">
-                  <img
+                  <Image
                     className="rounded-full w-9 h-9"
                     src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/karen-nelson.png"
                     alt="profile picture"
@@ -277,7 +277,7 @@ export default function Home() {
                   </p>
                 </blockquote>
                 <figcaption className="flex items-center justify-center">
-                  <img
+                  <Image
                     className="rounded-full w-9 h-9"
                     src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/roberta-casas.png"
                     alt="profile picture"
@@ -301,7 +301,7 @@ export default function Home() {
                   </p>
                 </blockquote>
                 <figcaption className="flex items-center justify-center">
-                  <img
+                  <Image
                     className="rounded-full w-9 h-9"
                     src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/jese-leos.png"
                     alt="profile picture"
@@ -325,7 +325,7 @@ export default function Home() {
                   </p>
                 </blockquote>
                 <figcaption className="flex items-center justify-center">
-                  <img
+                  <Image
                     className="rounded-full w-9 h-9"
                     src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/joseph-mcfall.png"
                     alt="profile picture"
