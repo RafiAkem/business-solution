@@ -1,6 +1,7 @@
 import WordFadeIn from "@/components/magicui/word-fade-in";
 import WordRotate from "@/components/magicui/word-rotate";
 import Link from "next/link";
+import Image from "next/image";
 import {
   FaFileAlt,
   FaCalculator,
@@ -20,14 +21,22 @@ export default function Home() {
         {/* Hero Section */}
         <section
           id="beranda"
-          className="relative text-center py-32 bg-[rgb(27,87,197)]"
+          className="relative text-center min-h-screen flex items-center justify-center"
         >
-          <div className="relative z-10 font-dm-sans">
+          <Image
+            src="/BG-Web2.png"
+            alt="Hero Background"
+            layout="fill"
+            objectFit="cover"
+            quality={100}
+            className="absolute inset-0 z-0"
+          />
+          <div className="relative z-10 font-dm-sans container mx-auto px-4">
             <WordFadeIn
               words="EasyIzin Solusi Bisnis Terbaik untuk Anda"
-              className="mb-6 text-4xl md:text-6xl font-bold text-white"
+              className="mb-6 text-3xl md:text-4xl lg:text-6xl font-bold text-white"
             />
-            <div className="mb-4 text-xl text-gray-200 max-w-2xl mx-auto">
+            <div className="mb-4 text-lg md:text-xl text-gray-200 max-w-2xl mx-auto">
               <p className="mb-2">EasyIzin siap membantu Anda dalam Masalah</p>
               <WordRotate
                 words={[
@@ -40,16 +49,16 @@ export default function Home() {
                 duration={3000}
               />
             </div>
-            <div className="flex justify-center space-x-4 mt-8 font-questrial">
+            <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4 mt-8 font-questrial">
               <Link
                 href="/form"
-                className="bg-white text-[rgb(27,87,197)] px-8 py-3 rounded-full hover:bg-gray-100 transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-1 pulse-animation"
+                className="bg-white text-[rgb(27,87,197)] px-6 sm:px-8 py-2 sm:py-3 rounded-full hover:bg-gray-100 transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-1 pulse-animation text-base sm:text-lg font-semibold"
               >
                 Konsultasi Sekarang
               </Link>
               <a
                 href="#layanan"
-                className="bg-transparent border-2 border-white text-white px-8 py-3 rounded-full hover:bg-white hover:text-[rgb(27,87,197)] transition-all duration-300"
+                className="bg-transparent border-2 border-white text-white px-6 sm:px-8 py-2 sm:py-3 rounded-full hover:bg-white hover:text-[rgb(27,87,197)] transition-all duration-300 text-base sm:text-lg font-semibold"
               >
                 Pelajari Layanan Kami
               </a>
@@ -118,7 +127,7 @@ export default function Home() {
                 </Link>
               </div>
               <div className="lg:w-3/4">
-                <BentoGrid className="grid-cols-3 grid-rows-2 gap-4">
+                <BentoGrid className="grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mobile-bento-grid">
                   {[
                     {
                       Icon: FaClock,
@@ -128,7 +137,7 @@ export default function Home() {
                       background: (
                         <div className="absolute inset-0 bg-blue-100 opacity-20 rounded-xl" />
                       ),
-                      className: "col-span-1 row-span-1",
+                      className: "col-span-1",
                     },
                     {
                       Icon: FaUsers,
@@ -138,7 +147,7 @@ export default function Home() {
                       background: (
                         <div className="absolute inset-0 bg-green-100 opacity-20 rounded-xl" />
                       ),
-                      className: "col-span-1 row-span-1",
+                      className: "col-span-1",
                     },
                     {
                       Icon: FaPuzzlePiece,
@@ -148,7 +157,7 @@ export default function Home() {
                       background: (
                         <div className="absolute inset-0 bg-purple-100 opacity-20 rounded-xl" />
                       ),
-                      className: "col-span-1 row-span-1",
+                      className: "col-span-1",
                     },
                     {
                       Icon: FaCalculator,
@@ -158,7 +167,7 @@ export default function Home() {
                       background: (
                         <div className="absolute inset-0 bg-yellow-100 opacity-20 rounded-xl" />
                       ),
-                      className: "col-span-1 row-span-1",
+                      className: "col-span-1",
                     },
                     {
                       Icon: FaHeadset,
@@ -168,7 +177,7 @@ export default function Home() {
                       background: (
                         <div className="absolute inset-0 bg-red-100 opacity-20 rounded-xl" />
                       ),
-                      className: "col-span-2 row-span-1",
+                      className: "col-span-1",
                     },
                   ].map((feature) => (
                     <BentoCard key={feature.name} {...feature} />

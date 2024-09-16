@@ -9,13 +9,19 @@ import FloatingWhatsApp from "./FloatingWhatsApp";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const router = useRouter();
   const pathname = usePathname();
 
   useEffect(() => {
     document.documentElement.style.scrollBehavior = "smooth";
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 0);
+    };
+    window.addEventListener("scroll", handleScroll);
     return () => {
       document.documentElement.style.scrollBehavior = "auto";
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
@@ -50,11 +56,15 @@ export default function Navbar() {
 
   return (
     <>
-      <header className="bg-[rgb(27,87,197)] text-white p-2 relative z-50">
-        <nav className="container mx-auto flex justify-between items-center">
+      <header
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+          isScrolled ? "bg-[rgb(27,87,197)]" : "bg-transparent"
+        }`}
+      >
+        <nav className="container mx-auto flex justify-between items-center p-4">
           <Link
             href="/"
-            className="flex items-center hover:opacity-80 transition-opacity -mt-4" // Changed from -mt-2 to -mt-4
+            className="flex items-center hover:opacity-80 transition-opacity"
           >
             <div className="relative w-32 h-24">
               <Image
@@ -133,7 +143,7 @@ export default function Navbar() {
 
           {/* Mobile menu */}
           <div
-            className={`md:hidden fixed inset-0 bg-[rgb(27,87,197)] z-40 transition-all duration-300 ease-in-out ${
+            className={`md:hidden fixed inset-0 bg-[rgb(27,87,197)]/90 backdrop-blur-md z-40 transition-all duration-300 ease-in-out ${
               isMenuOpen ? "opacity-100 visible" : "opacity-0 invisible"
             }`}
           >
@@ -197,7 +207,6 @@ export default function Navbar() {
           </div>
         </nav>
       </header>
-
       <FloatingWhatsApp />
     </>
   );
