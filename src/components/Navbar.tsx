@@ -64,7 +64,7 @@ export default function Navbar() {
           isHomePage
             ? "fixed top-0 left-0 right-0 z-50 transition-all duration-300"
             : isTentangKamiPage
-            ? "relative" // Change this line
+            ? "relative"
             : "fixed top-0 left-0 right-0 z-50"
         } ${
           isHomePage
@@ -199,9 +199,9 @@ export default function Navbar() {
               </li>
               <li>
                 <Link
-                  href="/#tentang"
+                  href="/tentang-kami"
                   className="text-2xl text-white hover:text-gray-300 transition-colors font-bold"
-                  onClick={(e) => handleNavClick(e, "/#tentang")}
+                  onClick={(e) => handleNavClick(e, "/tentang-kami")}
                 >
                   Tentang Kami
                 </Link>
