@@ -49,6 +49,7 @@ export default function TentangKami() {
             fill
             style={{ objectFit: "contain" }}
             className="relative z-10"
+            priority
           />
         </motion.div>
         {/* Text container untuk mobile */}
