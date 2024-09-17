@@ -88,6 +88,7 @@ export default function Navbar() {
                 fill
                 style={{ objectFit: "contain" }}
                 className="object-left"
+                priority
               />
             </div>
           </Link>

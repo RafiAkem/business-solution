@@ -18,8 +18,9 @@ export default function Hero() {
         style={{
           objectFit: "cover",
         }}
-        quality={100}
+        quality={85}
         className="absolute inset-0 z-0"
+        priority
       />
       <div className="relative z-10 font-dm-sans container mx-auto px-4">
         <WordFadeIn
