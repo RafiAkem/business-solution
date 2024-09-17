@@ -4,6 +4,7 @@ import Image from "next/image";
 import useInView from "@/hooks/useInView";
 import GradualSpacing from "@/components/magicui/gradual-spacing";
 import BoxReveal from "@/components/magicui/box-reveal";
+import { motion } from "framer-motion";
 
 export default function TentangKami() {
   const visiMisiRef = useRef<HTMLDivElement>(null);
@@ -29,14 +30,19 @@ export default function TentangKami() {
         </div>
       </div>
       <div className="relative w-full sm:w-[90%] mx-auto aspect-[4/3] sm:aspect-[16/9] mt-8 sm:-mt-20">
-        {/* Background div - without animation */}
+        {/* Background div*/}
         <div className="w-[80%] sm:w-[600px] h-[70%] sm:h-[336px] bg-[#dedede] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-3xl">
           <div className="inline-flex items-start gap-4 relative top-10 left-11">
             <div className="relative flex-[0_0_auto]" />
           </div>
         </div>
         {/* Image container */}
-        <div className="absolute inset-0 overflow-hidden rounded-3xl">
+        <motion.div
+          className="absolute inset-0 overflow-hidden rounded-3xl"
+          initial={{ y: 100, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.3, ease: "easeOut" }}
+        >
           <Image
             src="/Transparen.png"
             alt="Dream Team"
@@ -44,9 +50,14 @@ export default function TentangKami() {
             style={{ objectFit: "contain" }}
             className="relative z-10"
           />
-        </div>
+        </motion.div>
         {/* Text container untuk mobile */}
-        <div className="absolute left-0 right-0 top-[95%] sm:top-full mt-2 sm:mt-6 sm:hidden flex justify-between px-4">
+        <motion.div
+          className="absolute left-0 right-0 top-[95%] sm:top-full mt-2 sm:mt-6 sm:hidden flex justify-between px-4"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+        >
           {/* Left text */}
           <div className="text-center">
             <p className="font-source-serif font-semibold text-base sm:text-lg">
@@ -65,11 +76,16 @@ export default function TentangKami() {
               Founder Of EasyIzin
             </p>
           </div>
-        </div>
+        </motion.div>
         {/* Text untuk Desktop/Layar besar */}
         <div className="hidden sm:block">
           {/* Left text*/}
-          <div className="absolute left-0 top-1/2 transform -translate-y-1/2 translate-x-1/4 sm:translate-x-1/2 text-center">
+          <motion.div
+            className="absolute left-0 top-1/2 transform -translate-y-1/2 translate-x-1/4 sm:translate-x-1/2 text-center"
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+          >
             <GradualSpacing
               text="Attala Izzataka"
               className="font-source-serif font-semibold text-xl sm:text-2xl"
@@ -82,9 +98,14 @@ export default function TentangKami() {
               duration={0.3}
               delayMultiple={0.02}
             />
-          </div>
+          </motion.div>
           {/* Right text */}
-          <div className="absolute right-0 top-1/2 transform -translate-y-1/2 -translate-x-1/4 sm:-translate-x-1/2 text-center">
+          <motion.div
+            className="absolute right-0 top-1/2 transform -translate-y-1/2 -translate-x-1/4 sm:-translate-x-1/2 text-center"
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+          >
             <GradualSpacing
               text="Muhammad Farhan"
               className="font-source-serif font-semibold text-xl sm:text-2xl"
@@ -97,7 +118,7 @@ export default function TentangKami() {
               duration={0.3}
               delayMultiple={0.02}
             />
-          </div>
+          </motion.div>
         </div>
       </div>
 

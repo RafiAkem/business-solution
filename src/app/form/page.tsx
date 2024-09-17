@@ -1,6 +1,8 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
+import { motion } from "framer-motion";
 
 export default function Form() {
   const [nama, setNama] = useState("");
@@ -19,15 +21,33 @@ export default function Form() {
   };
 
   return (
-    <div className="flex flex-col min-h-screen">
-      <main className="flex-grow bg-gradient-to-b from-[rgb(27,87,197)] to-[rgb(13,110,253)] text-white">
+    <div className="relative min-h-screen flex flex-col">
+      <Image
+        src="/BG-Web2.png"
+        alt="Background"
+        layout="fill"
+        objectFit="cover"
+        quality={100}
+        className="absolute inset-0 z-0"
+      />
+      <main className="flex-grow relative z-10 pt-24">
         <div className="container mx-auto px-4 py-16">
-          <h1 className="text-4xl font-bold mb-8 text-center">
-            Konsultasi Form
-          </h1>
+          <motion.h1
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="text-4xl font-bold mb-8 text-center text-white"
+          >
+            Form Konsultasi
+          </motion.h1>
           <div className="flex flex-col md:flex-row justify-between items-start gap-8">
             {/* Informasi Kontak */}
-            <div className="w-full md:w-1/3 bg-white/90 backdrop-blur-sm p-8 rounded-lg shadow-xl">
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="w-full md:w-1/3 bg-white/90 backdrop-blur-sm p-8 rounded-lg shadow-xl"
+            >
               <h2 className="text-2xl font-bold mb-4 text-gray-800">
                 Informasi Kontak
               </h2>
@@ -39,7 +59,7 @@ export default function Form() {
                   <strong>Telepon:</strong> (021) 1234-5678
                 </p>
                 <p>
-                  <strong>Email:</strong> info@atalla.com
+                  <strong>Email:</strong> info@easyizin.com
                 </p>
                 <p>
                   <strong>Jam Operasional:</strong>
@@ -50,10 +70,13 @@ export default function Form() {
                   <li>Minggu: Tutup</li>
                 </ul>
               </div>
-            </div>
+            </motion.div>
 
             {/* Formulir */}
-            <form
+            <motion.form
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5, delay: 0.4 }}
               onSubmit={handleSubmit}
               className="w-full md:w-1/2 bg-white/90 backdrop-blur-sm p-8 rounded-lg shadow-xl"
             >
@@ -130,7 +153,7 @@ export default function Form() {
               >
                 Kirim ke WhatsApp
               </button>
-            </form>
+            </motion.form>
           </div>
         </div>
       </main>

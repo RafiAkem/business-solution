@@ -16,6 +16,7 @@ export default function Navbar() {
   const isHomePage = pathname === "/";
   const isTentangKamiPage = pathname === "/tentang-kami";
 
+  // Scroll Behavior
   useEffect(() => {
     document.documentElement.style.scrollBehavior = "smooth";
     const handleScroll = () => {
@@ -28,6 +29,7 @@ export default function Navbar() {
     };
   }, []);
 
+  // Navigasi
   const handleNavClick = (
     e: React.MouseEvent<HTMLAnchorElement>,
     href: string
@@ -69,30 +71,30 @@ export default function Navbar() {
         } ${
           isHomePage
             ? isScrolled
-              ? "bg-[rgb(27,87,197)] bg-opacity-90 backdrop-blur-md"
+              ? "bg-[rgb(27,87,197)] md:bg-opacity-90 md:backdrop-blur-md"
               : "bg-transparent"
             : "bg-[rgb(27,87,197)]"
         }`}
       >
-        <nav className="container mx-auto flex justify-between items-center p-4">
+        <nav className="container mx-auto flex justify-between items-center h-20 md:h-20 px-4">
           <Link
             href="/"
             className="flex items-center hover:opacity-80 transition-opacity"
           >
-            <div className="relative w-32 h-24">
+            <div className="relative w-52 h-44 mt-2">
               <Image
                 src="/LogoWhiteEasyIzin.png"
                 alt="EasyIzin"
-                width={120}
-                height={120}
-                className="object-contain"
+                fill
+                style={{ objectFit: "contain" }}
+                className="object-left"
               />
             </div>
           </Link>
 
           {/* Hamburger menu button */}
           <button
-            className={`md:hidden z-50 ${
+            className={`md:hidden mx-2 z-50 ${
               isMenuOpen ? "text-white" : "text-white"
             }`}
             onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -156,7 +158,7 @@ export default function Navbar() {
 
           {/* Mobile menu */}
           <div
-            className={`md:hidden fixed inset-0 bg-[rgb(27,87,197)]/90 backdrop-blur-md z-40 transition-all duration-300 ease-in-out ${
+            className={`md:hidden fixed inset-0 bg-[rgb(27,87,197)] z-40 transition-all duration-300 ease-in-out ${
               isMenuOpen ? "opacity-100 visible" : "opacity-0 invisible"
             }`}
           >

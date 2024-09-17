@@ -32,7 +32,7 @@ export default function ArtikelPage() {
       <main className="flex-grow bg-white">
         {/* Artikel Terbaru Section */}
         <section className="py-16">
-          <div className="container mx-auto px-4">
+          <div className="container mx-auto px-4 mt-20">
             <h1 className="text-4xl md:text-5xl font-bold mb-4 text-center text-gray-800">
               Artikel Terbaru
             </h1>

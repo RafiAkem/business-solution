@@ -10,6 +10,9 @@ export const metadata: Metadata = {
   title: "EasyIzin - Solusi Bisnis Terbaik",
   description:
     "EasyIzin membantu Anda dalam pengurusan legalitas usaha, pajak, dan pengembangan bisnis.",
+  icons: {
+    icon: "/IconWEB.ico",
+  },
 };
 
 export default function RootLayout({
