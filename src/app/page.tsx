@@ -1,3 +1,5 @@
+"use client";
+import { useState } from "react";
 import Link from "next/link";
 import {
   FaFileAlt,
@@ -8,12 +10,19 @@ import {
   FaUsers,
   FaPuzzlePiece,
   FaHeadset,
+  FaPlayCircle,
 } from "react-icons/fa";
 import { BentoCard, BentoGrid } from "@/components/magicui/bento-grid";
 import Testimonial from "@/components/Testimonial";
 import Hero from "@/components/Hero";
 
 export default function Home() {
+  const [videoLoaded, setVideoLoaded] = useState(false);
+
+  const loadVideo = () => {
+    setVideoLoaded(true);
+  };
+
   return (
     <div className="flex flex-col min-h-screen font-sans">
       <main className="flex-grow">
@@ -25,13 +34,26 @@ export default function Home() {
             <div className="flex flex-col md:flex-row items-center">
               <div className="w-full md:w-2/3 mb-8 md:mb-0">
                 <div className="relative w-full pt-[56.25%] rounded-lg overflow-hidden">
-                  <iframe
-                    src="https://www.youtube.com/embed/a1OX0A19DM4?autoplay=1&controls=0&showinfo=0&rel=0&loop=1&playlist=a1OX0A19DM4&mute=1&modestbranding=1&iv_load_policy=3"
-                    allow="autoplay; encrypted-media"
-                    allowFullScreen
-                    className="absolute top-0 left-0 w-full h-full object-cover"
-                  ></iframe>
-                  <div className="absolute inset-0 bg-transparent pointer-events-none" />
+                  {!videoLoaded ? (
+                    <div
+                      className="absolute inset-0 bg-gray-200 flex items-center justify-center cursor-pointer"
+                      onClick={loadVideo}
+                    >
+                      <FaPlayCircle className="text-6xl text-gray-500" />
+                      <span className="sr-only">Load video</span>
+                    </div>
+                  ) : (
+                    <video
+                      src="/path/to/your/video.mp4"
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      className="absolute top-0 left-0 w-full h-full object-cover"
+                    >
+                      Your browser does not support the video tag.
+                    </video>
+                  )}
                 </div>
               </div>
               <div className="w-full md:w-1/2 md:pl-12">

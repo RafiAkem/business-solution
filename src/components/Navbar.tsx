@@ -85,7 +85,8 @@ export default function Navbar() {
               <Image
                 src="/LogoWhiteEasyIzin.png"
                 alt="EasyIzin"
-                fill
+                width={180}
+                height={50}
                 style={{ objectFit: "contain" }}
                 className="object-left"
                 priority
