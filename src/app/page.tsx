@@ -5,7 +5,7 @@ import {
   FaFileAlt,
   FaCalculator,
   FaPaintBrush,
-  FaBuilding,
+  FaTrademark,
   FaClock,
   FaUsers,
   FaPuzzlePiece,
@@ -15,13 +15,69 @@ import {
 import { BentoCard, BentoGrid } from "@/components/magicui/bento-grid";
 import Testimonial from "@/components/Testimonial";
 import Hero from "@/components/Hero";
+import ProductModal from "@/components/ProductModal";
+
+interface Product {
+  title: string;
+  description: string;
+  longDescription: string;
+  icon: React.ElementType;
+  color: string;
+  buttonText: string;
+  isLegalPublication?: boolean;
+}
 
 export default function Home() {
   const [videoLoaded, setVideoLoaded] = useState(false);
+  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
 
   const loadVideo = () => {
     setVideoLoaded(true);
   };
+
+  const openModal = (product: Product) => {
+    setSelectedProduct(product);
+  };
+
+  const closeModal = () => {
+    setSelectedProduct(null);
+  };
+
+  const services: Product[] = [
+    {
+      title: "Penerbitan Legalitas",
+      description: "Pendampingan pemenuhan legalitas usaha cabos dan cadirut untuk keamanan dan bonafitas dalam menjalankan usaha",
+      longDescription: "", 
+      icon: FaFileAlt,
+      color: "green",
+      buttonText: "Lihat Selengkapnya",
+      isLegalPublication: true
+    },
+    {
+      title: "Konsultasi Perpajakan",
+      description: "Layanan konsultasi pajak profesional untuk membantu Anda memahami dan memenuhi kewajiban perpajakan dengan efisien",
+      longDescription: "Tim ahli perpajakan kami siap membantu Anda dalam berbagai aspek perpajakan, termasuk perencanaan pajak, kepatuhan pajak, audit pajak, dan penyelesaian sengketa pajak. Kami memastikan bisnis Anda mematuhi peraturan perpajakan yang berlaku sambil mengoptimalkan efisiensi pajak.",
+      icon: FaCalculator,
+      color: "blue",
+      buttonText: "Pelajari Lebih Lanjut"
+    },
+    {
+      title: "Perizinan Usaha",
+      description: "",
+      longDescription: "Kami membantu mengurus detail-detail perizinan dalam usaha Anda .",
+      icon: FaTrademark,
+      color: "purple",
+      buttonText: "Daftarkan Merek Anda"
+    },
+    {
+      title: "Branding Usaha",
+      description: "Layanan branding komprehensif untuk membangun identitas merek yang kuat dan menarik bagi bisnis Anda",
+      longDescription: "Tim kreatif kami akan membantu Anda mengembangkan strategi branding yang efektif, termasuk desain logo, pemilihan palet warna, tipografi, dan elemen visual lainnya. Kami juga menyediakan panduan penggunaan merek untuk memastikan konsistensi dalam semua materi pemasaran dan komunikasi bisnis Anda.",
+      icon: FaPaintBrush,
+      color: "orange",
+      buttonText: "Mulai Branding"
+    }
+  ];
 
   return (
     <div className="flex flex-col min-h-screen font-sans">
@@ -161,54 +217,39 @@ export default function Home() {
 
         <section id="layanan" className="py-16 bg-gray-100">
           <div className="container mx-auto px-4">
-            <h2 className="text-3xl font-bold text-center mb-10">
-              Layanan Kami
-            </h2>
+            <h2 className="text-3xl font-bold text-center mb-10">Layanan Kami</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              <div className="bg-white p-6 rounded-lg shadow-md transition-all duration-300 hover:shadow-xl">
-                <FaFileAlt className="text-4xl text-blue-500 mb-4" />
-                <h3 className="text-xl font-semibold mb-2">
-                  Penerbitan Legalitas
-                </h3>
-                <p className="text-gray-600">
-                  Kami membantu Anda dalam proses pengurusan dan penerbitan
-                  dokumen legalitas usaha, termasuk SIUP, TDP, dan perizinan
-                  lainnya.
-                </p>
-              </div>
-              <div className="bg-white p-6 rounded-lg shadow-md transition-all duration-300 hover:shadow-xl">
-                <FaCalculator className="text-4xl text-green-500 mb-4" />
-                <h3 className="text-xl font-semibold mb-2">Konsultasi Pajak</h3>
-                <p className="text-gray-600">
-                  Tim ahli kami menyediakan layanan konsultasi pajak untuk
-                  membantu Anda memahami dan memenuhi kewajiban perpajakan
-                  dengan efisien.
-                </p>
-              </div>
-              <div className="bg-white p-6 rounded-lg shadow-md transition-all duration-300 hover:shadow-xl">
-                <FaPaintBrush className="text-4xl text-purple-500 mb-4" />
-                <h3 className="text-xl font-semibold mb-2">Branding Usaha</h3>
-                <p className="text-gray-600">
-                  Kami membantu mengembangkan identitas merek yang kuat untuk
-                  bisnis Anda, termasuk desain logo, strategi branding, dan
-                  pemasaran.
-                </p>
-              </div>
-              <div className="bg-white p-6 rounded-lg shadow-md transition-all duration-300 hover:shadow-xl">
-                <FaBuilding className="text-4xl text-orange-500 mb-4" />
-                <h3 className="text-xl font-semibold mb-2">Virtual Office</h3>
-                <p className="text-gray-600">
-                  Layanan kantor virtual kami menyediakan alamat bisnis
-                  profesional dan fasilitas pendukung tanpa biaya sewa fisik
-                  yang mahal.
-                </p>
-              </div>
+              {services.map((service, index) => (
+                <div 
+                  key={index} 
+                  className="bg-white rounded-lg shadow-md overflow-hidden cursor-pointer"
+                  onClick={() => openModal(service)}
+                >
+                  <div className="p-6 flex flex-col h-full">
+                    <div className="flex items-center justify-between mb-4">
+                      <service.icon className={`text-4xl text-${service.color}-600`} />
+                      <div className="w-12 h-12 bg-gray-200 rounded-full"></div>
+                    </div>
+                    <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
+                    <p className="text-gray-600 flex-grow text-sm">{service.description}</p>
+                    <button className="mt-4 text-blue-500 font-semibold hover:underline">
+                      {service.buttonText}
+                    </button>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </section>
 
         <Testimonial />
       </main>
+
+      <ProductModal 
+        isOpen={!!selectedProduct}
+        onClose={closeModal}
+        product={selectedProduct || { title: '', description: '', longDescription: '', isLegalPublication: false }}
+      />
     </div>
   );
 }

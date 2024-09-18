@@ -62,7 +62,7 @@ export default function TentangKami() {
           {/* Left text */}
           <div className="text-center">
             <p className="font-source-serif font-semibold text-base sm:text-lg">
-              Attala Izzataka
+              Atalla Izzataka
             </p>
             <p className="font-source-serif text-sm sm:text-base text-gray-600">
               Co-Founder Of EasyIzin
@@ -88,7 +88,7 @@ export default function TentangKami() {
             transition={{ duration: 0.5, delay: 0.3 }}
           >
             <GradualSpacing
-              text="Attala Izzataka"
+              text="Atalla Izzataka"
               className="font-source-serif font-semibold text-xl sm:text-2xl"
               duration={0.3}
               delayMultiple={0.02}
@@ -142,9 +142,7 @@ export default function TentangKami() {
               </BoxReveal>
               <BoxReveal boxColor="#1b57c5" duration={0.5}>
                 <p className="text-gray-700 text-xl font-sans leading-relaxed">
-                  Menjadi platform terdepan dalam menyederhanakan dan
-                  mengoptimalkan proses perizinan bisnis di Indonesia, mendukung
-                  pertumbuhan ekonomi dan inovasi.
+                  Menjadi penerbitan terkemuka yang mempermudah proses legalitas bagi individu dan bisnis, memastikan kepatuhan hukum yang cepat dan efisien.
                 </p>
               </BoxReveal>
             </div>
@@ -161,15 +159,17 @@ export default function TentangKami() {
               <BoxReveal boxColor="#1b57c5" duration={0.5}>
                 <ul className="list-disc list-inside text-gray-700 space-y-4 text-xl font-sans leading-relaxed">
                   <li>
-                    Menyediakan solusi perizinan yang efisien dan transparan
+                    Menyediakan layanan penerbitan legalitas yang transparan dan terpercaya.
                   </li>
                   <li>
-                    Membantu pengusaha fokus pada pengembangan bisnis mereka
+                    Mengedukasi klien tentang pentingnya legalitas dalam berbisnis.
                   </li>
                   <li>
-                    Meningkatkan kepatuhan hukum dalam dunia bisnis Indonesia
+                    Mempercepat proses pengajuan izin dengan teknologi inovatif.
                   </li>
-                  <li>Mendorong digitalisasi proses administratif bisnis</li>
+                  <li>
+                    Membangun hubungan jangka panjang dengan klien melalui layanan yang berkualitas.
+                  </li>
                 </ul>
               </BoxReveal>
             </div>

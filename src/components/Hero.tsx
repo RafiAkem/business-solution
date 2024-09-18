@@ -32,8 +32,8 @@ export default function Hero() {
           <WordRotate
             words={[
               "Penerbitan Legalitas Usaha",
-              "Laporan perpajakan dan akuntansi",
-              "Penyewaan kantor virtual & ruang kantor",
+              "Konsultasi Perpajakan",
+              "Pendaftaran HKI Merek",
               "Branding usaha",
             ]}
             className="text-yellow-300 block"
