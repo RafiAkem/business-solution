@@ -82,28 +82,30 @@ export default function Perpajakan() {
           </div>
         </div>
       </nav>
-      <section className="py-12 bg-white sm:py-16 lg:py-20">
-        <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl xl:text-5xl font-serif">
-              Konsultasi Perpajakan
-            </h2>
-            <p className="mt-4 text-xl text-gray-600">
-              Layanan konsultasi pajak profesional untuk membantu Anda memahami
-              dan memenuhi kewajiban perpajakan dengan efisien.
-            </p>
+      <main className="flex-grow pb-16">
+        <section className="py-12 bg-white sm:py-16 lg:py-20">
+          <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+            <div className="max-w-3xl mx-auto text-center">
+              <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl xl:text-5xl font-serif">
+                Konsultasi Perpajakan
+              </h2>
+              <p className="mt-4 text-xl text-gray-600">
+                Layanan konsultasi pajak profesional untuk membantu Anda
+                memahami dan memenuhi kewajiban perpajakan dengan efisien.
+              </p>
+            </div>
           </div>
+        </section>
+        <div className={commonStyles.grid}>
+          {taxServices.map((service, index) => (
+            <ProductCard
+              key={index}
+              {...service}
+              entityType="Konsultasi Perpajakan"
+            />
+          ))}
         </div>
-      </section>
-      <div className={commonStyles.grid}>
-        {taxServices.map((service, index) => (
-          <ProductCard
-            key={index}
-            {...service}
-            entityType="Konsultasi Perpajakan"
-          />
-        ))}
-      </div>
+      </main>
     </div>
   );
 }

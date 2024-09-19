@@ -25,7 +25,7 @@ export default function Hero() {
       <Image
         src="/gedung.jpg"
         fill
-        alt="Gedung MK Overlay"
+        alt="Skyscrape"
         style={{
           objectFit: "cover",
           opacity: 0.3,
@@ -36,7 +36,7 @@ export default function Hero() {
       />
       <div className="relative z-20 font-dm-sans container mx-auto px-4">
         <WordFadeIn
-          words="EasyIzin Jalan Pintas Menuju Legalitas."
+          words="Jalan Pintas Menuju Legalitas."
           className="mb-6 text-3xl md:text-4xl lg:text-6xl font-bold text-white"
         />
         <div className="mb-4 text-lg md:text-2xl text-gray-200 max-w-2xl mx-auto">

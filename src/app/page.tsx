@@ -12,6 +12,7 @@ import Hero from "@/components/Hero";
 import ProductModal from "@/components/ProductModal";
 import Feature from "@/components/Feature";
 import { useRouter } from "next/navigation";
+import Card from "@/components/Card";
 
 interface Product {
   title: string;
@@ -65,12 +66,13 @@ export default function Home() {
     },
     {
       title: "Perizinan Usaha",
-      description: "",
+      description:
+        "Layanan profesional untuk membantu Anda mendapatkan izin usaha yang diperlukan dengan cepat dan efisien",
       longDescription:
-        "Kami membantu mengurus detail-detail perizinan dalam usaha Anda .",
+        "Tim ahli kami akan memandu Anda melalui proses perizinan usaha yang kompleks, memastikan semua persyaratan terpenuhi dan dokumen lengkap untuk mempercepat proses persetujuan.",
       icon: FaTrademark,
       color: "purple",
-      buttonText: "Daftarkan Merek Anda",
+      buttonText: "Urus Perizinan Sekarang",
     },
     {
       title: "Branding Usaha",
@@ -140,44 +142,36 @@ export default function Home() {
         {/* Why Choose EasyIzin Section */}
         <Feature />
 
-        <section id="layanan" className="py-16 bg-gray-50">
-          <div className="container mx-auto px-4">
-            <h2 className="text-5xl md:text-6xl font-bold text-center mb-16 tracking-wide">
+        <section
+          id="layanan"
+          className="py-24 relative bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: "url('/siluet.jpg')",
+          }}
+        >
+          <div className="absolute inset-0 bg-black opacity-70"></div>
+          <div className="container mx-auto px-4 relative z-10">
+            <h2 className="text-6xl md:text-7xl font-bold text-center mb-20 tracking-wide text-white">
               LAYANAN KAMI
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               {services.map((service, index) => (
-                <div
+                <Card
                   key={index}
-                  className="bg-white rounded-xl shadow-lg overflow-hidden cursor-pointer transform transition-all duration-300 hover:scale-105 hover:shadow-xl flex flex-col h-full"
+                  title={
+                    service.title.includes("Usaha")
+                      ? service.title.replace("Usaha", "\nUsaha")
+                      : service.title
+                  }
+                  description={service.description}
+                  buttonText={service.buttonText}
+                  Icon={service.icon}
                   onClick={() =>
                     service.link
                       ? router.push(service.link)
                       : openModal(service)
                   }
-                >
-                  <div className="p-8 flex flex-col h-full">
-                    <div className="flex items-center justify-between mb-6">
-                      <service.icon
-                        className={`text-5xl text-${service.color}-600`}
-                      />
-                      <div className="w-16 h-16 bg-gray-200 rounded-full flex items-center justify-center">
-                        <span className="text-2xl font-bold text-gray-600">
-                          {index + 1}
-                        </span>
-                      </div>
-                    </div>
-                    <h3 className="text-2xl font-semibold mb-4">
-                      {service.title}
-                    </h3>
-                    <p className="text-gray-600 flex-grow text-base mb-6">
-                      {service.description}
-                    </p>
-                    <button className="mt-auto text-blue-500 font-semibold hover:underline text-lg">
-                      {service.buttonText}
-                    </button>
-                  </div>
-                </div>
+                />
               ))}
             </div>
           </div>
