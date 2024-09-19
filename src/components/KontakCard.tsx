@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { FaEnvelope, FaPhone, FaMapMarkerAlt } from "react-icons/fa";
+import { FaEnvelope, FaPhone } from "react-icons/fa";
 
 export default function KontakCard() {
   return (
@@ -11,27 +11,27 @@ export default function KontakCard() {
         <p className="flex items-center">
           <FaEnvelope className="mr-3 text-blue-500" />
           <span>
-            <strong>Email:</strong> info@easyizin.com
+            <strong>Email:</strong> Easyizinindonesia@gmail.com
           </span>
         </p>
         <p className="flex items-center">
           <FaPhone className="mr-3 text-blue-500" />
           <span>
-            <strong>Telepon:</strong> +62 89517889100
+            <strong>Telepon:</strong> (+62)895-1788-9100
           </span>
         </p>
-        <p className="flex items-center">
+        {/* <p className="flex items-center">
           <FaMapMarkerAlt className="mr-3 text-blue-500" />
           <span>
             <strong>Alamat:</strong> Jl. Contoh No. 123, Jakarta
           </span>
-        </p>
+        </p> */}
       </div>
       <Link
         href="/form"
         className="mt-6 bg-blue-500 text-white px-6 py-3 rounded-full inline-block hover:bg-blue-600 transition-colors text-center w-full"
       >
-        Konsultasi Gratis
+        Konsultasi Sekarang
       </Link>
     </div>
   );

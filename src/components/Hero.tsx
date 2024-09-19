@@ -22,9 +22,21 @@ export default function Hero() {
         className="absolute inset-0 z-0"
         priority
       />
-      <div className="relative z-10 font-dm-sans container mx-auto px-4">
+      <Image
+        src="/gedung.jpg"
+        fill
+        alt="Gedung MK Overlay"
+        style={{
+          objectFit: "cover",
+          opacity: 0.3,
+        }}
+        quality={85}
+        className="absolute inset-0 z-10"
+        priority
+      />
+      <div className="relative z-20 font-dm-sans container mx-auto px-4">
         <WordFadeIn
-          words="EasyIzin Solusi Bisnis Terbaik untuk Anda"
+          words="EasyIzin Jalan Pintas Menuju Legalitas."
           className="mb-6 text-3xl md:text-4xl lg:text-6xl font-bold text-white"
         />
         <div className="mb-4 text-lg md:text-2xl text-gray-200 max-w-2xl mx-auto">

@@ -8,11 +8,9 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        poppins: ["Poppins", "sans-serif"],
-        lato: ["Lato", "Helvetica", "Arial", "sans-serif"],
-        "source-serif": ['"Source Serif Pro"', "serif"],
         sans: ["var(--font-geist-sans)"],
         mono: ["var(--font-geist-mono)"],
+        georgia: ["Georgia", "serif"],
       },
       keyframes: {
         fadeIn: {
@@ -57,5 +55,18 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    function ({ addUtilities }) {
+      const newUtilities = {
+        ".hide-scrollbar": {
+          "-ms-overflow-style": "none",
+          "scrollbar-width": "none",
+          "&::-webkit-scrollbar": {
+            display: "none",
+          },
+        },
+      };
+      addUtilities(newUtilities);
+    },
+  ],
 };

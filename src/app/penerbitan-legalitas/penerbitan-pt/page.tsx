@@ -1,59 +1,42 @@
-import Image from 'next/image';
-import ProductCard from '@/components/ProductCard';
-import Link from 'next/link';
+import ProductCard from "@/components/ProductCard";
+import Link from "next/link";
 
 const commonStyles = {
-  grid: "grid grid-cols-1 md:grid-cols-3 gap-6 mx-auto mt-12 lg:max-w-6xl",
+  grid: "grid grid-cols-1 md:grid-cols-3 gap-8 mx-auto mt-12 lg:max-w-7xl",
 };
 
 export default function PenerbitanPT() {
   const plans = [
     {
-      title: "Basic PT",
-      price: "Rp 5.000.000",
+      title: "Paket A",
+      price: "Rp 4.000.000",
       features: [
-        "Pendirian PT Dasar",
-        "Akta Notaris",
-        "SK Kemenkumham",
-        "NPWP Badan",
-        "SKT Pajak",
-        "Konsultasi Gratis 2 Jam",
+        "Konsultasi Pendirian PT",
+        "Pengecekan dan Pemesanan Nama PT",
+        "SKT Kemenkumham",
+        "NIB/IZIN USAHA",
+        "NPWP",
+        "SKT KPP",
+        "PEMBUKAAN REKENING GIRO BANK",
       ],
     },
     {
-      title: "Pro PT",
-      price: "Rp 7.500.000",
-      features: [
-        "Semua fitur Basic PT",
-        "SIUP",
-        "NIB",
-        "Domisili Usaha",
-        "Konsultasi Gratis 5 Jam",
-      ],
+      title: "Paket B",
+      price: "Rp 6.000.000",
+      features: ["Semua fitur Paket A", "Virtual Office 1 Tahun"],
     },
     {
-      title: "Enterprise PT",
+      title: "Paket C",
       price: "Rp 12.000.000",
       features: [
-        "Semua fitur Pro PT",
-        "Izin Khusus Industri",
-        "Pendaftaran Merek Dagang",
-        "Konsultasi Pajak",
-        "Pendampingan 2 Bulan",
+        "Semua fitur Paket B",
+        "Pengelolaan Laporan Keuangan dan Perpajakan Selama 1 Tahun",
       ],
     },
   ];
 
   return (
-    <div className="relative min-h-screen">
-      <Image
-        src="/product-bg.png"
-        alt="Background"
-        layout="fill"
-        objectFit="cover"
-        quality={100}
-        className="z-0"
-      />
+    <div className="relative min-h-screen bg-white">
       {/* Non-sticky Navbar */}
       <nav className="relative z-10 bg-white shadow-md">
         <div className="container mx-auto px-4 py-4">
@@ -65,28 +48,39 @@ export default function PenerbitanPT() {
               <Link href="/" className="text-gray-600 hover:text-blue-600">
                 Beranda
               </Link>
-              <Link href="/tentang-kami" className="text-gray-600 hover:text-blue-600">
+              <Link
+                href="/tentang-kami"
+                className="text-gray-600 hover:text-blue-600"
+              >
                 Tentang Kami
               </Link>
-              <Link href="/layanan" className="text-gray-600 hover:text-blue-600">
+              <Link
+                href="/layanan"
+                className="text-gray-600 hover:text-blue-600"
+              >
                 Layanan
               </Link>
             </div>
           </div>
         </div>
       </nav>
-      <div className="relative z-10 container mx-auto px-4 py-8">
-        <div className="bg-white bg-opacity-20 backdrop-blur-md rounded-lg shadow-lg p-8 mb-8">
-          <h1 className="text-3xl font-semibold mb-4 text-white font-source-serif text-center">Penerbitan PT</h1>
-          <p className="mb-4 text-white font-bold text-center font-lato">
-            Layanan penerbitan PT (Perseroan Terbatas) untuk membantu Anda mendirikan perusahaan dengan struktur yang kuat dan profesional.
-          </p>
+      <section className="py-12 bg-white sm:py-16 lg:py-20">
+        <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+          <div className="max-w-3xl mx-auto text-center">
+            <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl xl:text-5xl font-serif">
+              Penerbitan Legalitas PT
+            </h2>
+            <p className="mt-4 text-xl text-gray-600">
+              Layanan pendirian PT (Perseroan Terbatas) untuk membantu Anda
+              mendirikan perusahaan dengan tanggung jawab terbatas.
+            </p>
+          </div>
         </div>
-        <div className={commonStyles.grid}>
-          {plans.map((plan, index) => (
-            <ProductCard key={index} {...plan} />
-          ))}
-        </div>
+      </section>
+      <div className={commonStyles.grid}>
+        {plans.map((plan, index) => (
+          <ProductCard key={index} {...plan} entityType="Penerbitan PT" />
+        ))}
       </div>
     </div>
   );

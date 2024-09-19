@@ -9,7 +9,7 @@ import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export const metadata: Metadata = {
-  title: "EasyIzin - Solusi Bisnis Terbaik",
+  title: "EasyIzin - Jalan Pintas Menuju Legalitas",
   description:
     "EasyIzin membantu Anda dalam pengurusan legalitas usaha, pajak, dan pengembangan bisnis.",
   icons: {
