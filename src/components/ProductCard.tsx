@@ -6,6 +6,7 @@ interface ProductCardProps {
   title: string;
   price: string;
   features: string[];
+  note?: string;
   entityType: string;
 }
 
@@ -13,6 +14,7 @@ export default function ProductCard({
   title,
   price,
   features,
+  note,
   entityType,
 }: ProductCardProps) {
   const whatsappNumber = "6289517889100";
@@ -25,8 +27,9 @@ export default function ProductCard({
     <div className="bg-white rounded-lg p-6 flex flex-col h-full border-2 border-blue-600 transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
       <div className="flex-grow">
         <h3 className="text-2xl font-bold text-gray-800 font-sans">{title}</h3>
-        <div className="flex items-end mt-6">
+        <div className="flex items-end mt-6" style={{ minHeight: "3rem" }}>
           <p className="text-4xl font-bold text-blue-600 font-sans">{price}</p>
+          {note && <p className="text-sm text-red-500 ml-2">{note}</p>}
         </div>
         <ul className="mt-6 space-y-3 text-base font-medium text-gray-700">
           {features.map((feature, index) => (

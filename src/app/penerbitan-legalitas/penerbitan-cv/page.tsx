@@ -2,7 +2,7 @@ import ProductCard from "@/components/ProductCard";
 import Link from "next/link";
 
 const commonStyles = {
-  grid: "grid grid-cols-1 md:grid-cols-3 gap-6 mx-auto mt-12 lg:max-w-6xl",
+  grid: "grid grid-cols-1 md:grid-cols-3 gap-6 mx-auto mt-12 lg:max-w-7xl",
 };
 
 export default function PenerbitanCV() {
@@ -31,6 +31,18 @@ export default function PenerbitanCV() {
       features: [
         "Semua fitur Paket B",
         "Pengelolaan Laporan Keuangan dan Perpajakan Selama 1 Tahun",
+      ],
+    },
+    {
+      title: "Additional Branding Usaha",
+      price: "Rp 1.000.000",
+      features: [
+        "Logo",
+        "Company Profile",
+        "Kop Surat",
+        "Stempel",
+        "Brosur",
+        "Acc Sosmed dan marketplace",
       ],
     },
   ];
@@ -64,24 +76,26 @@ export default function PenerbitanCV() {
           </div>
         </div>
       </nav>
-      <section className="py-12 bg-white sm:py-16 lg:py-20">
-        <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl xl:text-5xl font-serif">
-              Penerbitan Legalitas CV
-            </h2>
-            <p className="mt-4 text-xl text-gray-600 font-sans">
-              Layanan pendirian CV (Commanditaire Vennootschap) untuk membantu
-              Anda mendirikan usaha dengan struktur kemitraan terbatas.
-            </p>
+      <main className="flex-grow pb-16">
+        <section className="py-12 bg-white sm:py-16 lg:py-20">
+          <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+            <div className="max-w-3xl mx-auto text-center">
+              <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl xl:text-5xl font-serif">
+                Penerbitan Legalitas CV
+              </h2>
+              <p className="mt-4 text-xl text-gray-600 font-sans">
+                Layanan pendirian CV (Commanditaire Vennootschap) untuk membantu
+                Anda mendirikan usaha dengan struktur kemitraan terbatas.
+              </p>
+            </div>
           </div>
+        </section>
+        <div className={commonStyles.grid}>
+          {plans.map((plan, index) => (
+            <ProductCard key={index} {...plan} entityType="Penerbitan CV" />
+          ))}
         </div>
-      </section>
-      <div className={commonStyles.grid}>
-        {plans.map((plan, index) => (
-          <ProductCard key={index} {...plan} entityType="Penerbitan CV" />
-        ))}
-      </div>
+      </main>
     </div>
   );
 }

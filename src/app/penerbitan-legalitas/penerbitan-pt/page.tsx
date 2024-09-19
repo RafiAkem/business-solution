@@ -33,6 +33,18 @@ export default function PenerbitanPT() {
         "Pengelolaan Laporan Keuangan dan Perpajakan Selama 1 Tahun",
       ],
     },
+    {
+      title: "Additional Branding Usaha",
+      price: "Rp 1.000.000",
+      features: [
+        "Logo",
+        "Company Profile",
+        "Kop Surat",
+        "Stempel",
+        "Brosur",
+        "Acc Sosmed dan marketplace",
+      ],
+    },
   ];
 
   return (
@@ -64,24 +76,26 @@ export default function PenerbitanPT() {
           </div>
         </div>
       </nav>
-      <section className="py-12 bg-white sm:py-16 lg:py-20">
-        <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl xl:text-5xl font-serif">
-              Penerbitan Legalitas PT
-            </h2>
-            <p className="mt-4 text-xl text-gray-600">
-              Layanan pendirian PT (Perseroan Terbatas) untuk membantu Anda
-              mendirikan perusahaan dengan tanggung jawab terbatas.
-            </p>
+      <main className="flex-grow pb-16">
+        <section className="py-12 bg-white sm:py-16 lg:py-20">
+          <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+            <div className="max-w-3xl mx-auto text-center">
+              <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl xl:text-5xl font-serif">
+                Penerbitan Legalitas PT
+              </h2>
+              <p className="mt-4 text-xl text-gray-600">
+                Layanan pendirian PT (Perseroan Terbatas) untuk membantu Anda
+                mendirikan perusahaan dengan tanggung jawab terbatas.
+              </p>
+            </div>
           </div>
+        </section>
+        <div className={commonStyles.grid}>
+          {plans.map((plan, index) => (
+            <ProductCard key={index} {...plan} entityType="Penerbitan PT" />
+          ))}
         </div>
-      </section>
-      <div className={commonStyles.grid}>
-        {plans.map((plan, index) => (
-          <ProductCard key={index} {...plan} entityType="Penerbitan PT" />
-        ))}
-      </div>
+      </main>
     </div>
   );
 }

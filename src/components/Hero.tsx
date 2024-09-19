@@ -48,7 +48,7 @@ export default function Hero() {
               "Pendaftaran HKI Merek",
               "Branding usaha",
             ]}
-            className="text-yellow-300 block"
+            className="text-yellow-300 font-semibold font-sans block"
             duration={3000}
           />
         </div>

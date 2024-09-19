@@ -17,7 +17,6 @@ export default function Perpajakan() {
         "Mewakili wajib pajak saat pemeriksaan DJP",
         "Pembukaan faktur pajak (jika PKP)",
       ],
-      note: "Untuk omset 50 JUTA - 1 MILYAR per tahun",
     },
     {
       title: "Laporan Perpajakan & Keuangan Badan Usaha - Paket B",
@@ -50,6 +49,47 @@ export default function Perpajakan() {
       features: [
         "Bukti Penerimaan Elektronik (Bukti Lapor)",
         "SPT Tahunan Orang Pribadi",
+      ],
+    },
+    {
+      title: "Pengurusan NPWP (Badan Usaha)",
+      price: "Rp 500.000",
+      features: ["Kartu Fisik NPWP Badan Usaha"],
+    },
+    {
+      title: "Pengurusan NPWP (Orang Pribadi)",
+      price: "Rp 250.000",
+      features: ["Kartu Fisik NPWP Orang Pribadi"],
+      note: "*Exclude PPN",
+    },
+    {
+      title: "Pengurusan EFIN",
+      price: "Rp 500.000",
+      features: ["Nomor EFIN"],
+      note: "*Exclude PPN",
+    },
+    {
+      title: "Pengurusan E-Sertifikat",
+      price: "Rp 2.500.000",
+      features: ["Sertifikat Elektronik", "PASHPRASE"],
+      note: "*Exclude PPN",
+    },
+    {
+      title: "Pengurusan PKP",
+      price: "Rp 2.500.000",
+      features: ["SK PKP dari Kantor Pelayanan Pajak", "Sertifikat Elektronik"],
+      note: "*Exclude PPN",
+    },
+    {
+      title: "Keberatan Ke Kanwil DJP",
+      price: "Harga Negotiable",
+      features: ["Mewakili wajib pajak dalam proses keberatan ke Kanwil DJP"],
+    },
+    {
+      title: "Banding & Gugatan Ke Pengadilan Pajak",
+      price: "Harga Negotiable",
+      features: [
+        "Mewakili wajib pajak dalam proses banding dan gugatan ke Pengadilan Pajak",
       ],
     },
   ];
