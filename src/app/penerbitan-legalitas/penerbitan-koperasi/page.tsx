@@ -65,22 +65,28 @@ export default function PenerbitanKoperasi() {
           </div>
         </div>
       </nav>
-      <section className="py-12 bg-white sm:py-16 lg:py-20">
-        <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl xl:text-5xl font-serif">
-            Penerbitan Legalitas Koperasi
-          </h2>
-          <p className="mt-4 text-xl text-gray-600">
-            Layanan pendirian Koperasi untuk membantu Anda mendirikan badan
-            usaha berbasis keanggotaan dengan prinsip gotong royong.
-          </p>
+      <main className="flex-grow pb-16">
+        <section className="py-12 bg-white sm:py-16 lg:py-20">
+          <div className="max-w-3xl mx-auto text-center">
+            <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl xl:text-5xl font-serif">
+              Penerbitan Legalitas Koperasi
+            </h2>
+            <p className="mt-4 text-xl text-gray-600">
+              Layanan pendirian Koperasi untuk membantu Anda mendirikan badan
+              usaha berbasis keanggotaan dengan prinsip gotong royong.
+            </p>
+          </div>
+        </section>
+        <div className={commonStyles.grid}>
+          {plans.map((plan, index) => (
+            <ProductCard
+              key={index}
+              {...plan}
+              entityType="Penerbitan Koperasi"
+            />
+          ))}
         </div>
-      </section>
-      <div className={commonStyles.grid}>
-        {plans.map((plan, index) => (
-          <ProductCard key={index} {...plan} entityType="Penerbitan Koperasi" />
-        ))}
-      </div>
+      </main>
     </div>
   );
 }

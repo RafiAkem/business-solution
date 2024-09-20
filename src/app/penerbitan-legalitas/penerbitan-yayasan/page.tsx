@@ -65,25 +65,31 @@ export default function PenerbitanYayasan() {
           </div>
         </div>
       </nav>
-      <section className="py-12 bg-white sm:py-16 lg:py-20">
-        <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl xl:text-5xl font-serif">
-              Penerbitan Legalitas Yayasan
-            </h2>
-            <p className="mt-4 text-xl text-gray-600 font-sans">
-              Layanan pendirian Yayasan untuk membantu Anda mendirikan
-              organisasi nirlaba dengan tujuan sosial, keagamaan, atau
-              kemanusiaan.
-            </p>
+      <main className="flex-grow pb-16">
+        <section className="py-12 bg-white sm:py-16 lg:py-20">
+          <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+            <div className="max-w-3xl mx-auto text-center">
+              <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl xl:text-5xl font-serif">
+                Penerbitan Legalitas Yayasan
+              </h2>
+              <p className="mt-4 text-xl text-gray-600 font-sans">
+                Layanan pendirian Yayasan untuk membantu Anda mendirikan
+                organisasi nirlaba dengan tujuan sosial, keagamaan, atau
+                kemanusiaan.
+              </p>
+            </div>
           </div>
+        </section>
+        <div className={commonStyles.grid}>
+          {plans.map((plan, index) => (
+            <ProductCard
+              key={index}
+              {...plan}
+              entityType="Penerbitan Yayasan"
+            />
+          ))}
         </div>
-      </section>
-      <div className={commonStyles.grid}>
-        {plans.map((plan, index) => (
-          <ProductCard key={index} {...plan} entityType="Penerbitan Yayasan" />
-        ))}
-      </div>
+      </main>
     </div>
   );
 }

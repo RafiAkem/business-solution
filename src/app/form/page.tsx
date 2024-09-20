@@ -53,13 +53,10 @@ export default function Form() {
               </h2>
               <div className="space-y-4 text-gray-600">
                 <p>
-                  <strong>Alamat:</strong> Jl. Contoh No. 123, Jakarta Pusat
+                  <strong>Telepon:</strong> (+62) 895-1788-9100
                 </p>
                 <p>
-                  <strong>Telepon:</strong> (021) 1234-5678
-                </p>
-                <p>
-                  <strong>Email:</strong> info@easyizin.com
+                  <strong>Email:</strong> EasyIzinIndonesi@gmail.com
                 </p>
                 <p>
                   <strong>Jam Operasional:</strong>

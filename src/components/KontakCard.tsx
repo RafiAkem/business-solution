@@ -17,7 +17,7 @@ export default function KontakCard() {
         <p className="flex items-center">
           <FaPhone className="mr-3 text-blue-500" />
           <span>
-            <strong>Telepon:</strong> (+62)895-1788-9100
+            <strong>Telepon:</strong> (+62) 895-1788-9100
           </span>
         </p>
         {/* <p className="flex items-center">
