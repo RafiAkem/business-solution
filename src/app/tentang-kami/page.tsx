@@ -183,10 +183,9 @@ export default function TentangKami() {
           </div>
         </div>
       </div>
-
-      <div>
+      <div className="pt-20">
         {/* Video Section */}
-        <section id="video" className="pt-10 py-16 bg-gray-100" ref={videoRef}>
+        <section id="video" className="mt-10 py-16 bg-gray-100" ref={videoRef}>
           <div className="container mx-auto px-4">
             <motion.h2
               className="text-3xl font-bold mb-8 text-center"
@@ -207,7 +206,7 @@ export default function TentangKami() {
             >
               <iframe
                 className="absolute top-0 left-0 w-full h-full"
-                src="https://youtu.be/tTgubImjfrg"
+                src="https://www.youtube.com/embed/tTgubImjfrg?controls=0"
                 title="YouTube video player"
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

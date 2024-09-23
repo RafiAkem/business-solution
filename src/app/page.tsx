@@ -56,7 +56,7 @@ export default function Home() {
         "Tim ahli perpajakan kami siap membantu Anda dalam berbagai aspek perpajakan, termasuk perencanaan pajak, kepatuhan pajak, audit pajak, dan penyelesaian sengketa pajak.",
       icon: FaCalculator,
       color: "blue",
-      buttonText: "Pelajari Lebih Lanjut",
+      buttonText: "Lihat Selengkapnya",
       link: "/perpajakan",
     },
     {
@@ -67,7 +67,7 @@ export default function Home() {
         "Tim ahli kami akan memandu Anda melalui proses perizinan usaha yang kompleks, memastikan semua persyaratan terpenuhi dan dokumen lengkap untuk mempercepat proses persetujuan.",
       icon: FaTrademark,
       color: "purple",
-      buttonText: "Urus Perizinan Sekarang",
+      buttonText: "Lihat Selengkapnya",
     },
     {
       title: "Branding Usaha",
@@ -77,7 +77,7 @@ export default function Home() {
         "Tim kreatif kami akan membantu Anda mengembangkan strategi branding yang efektif, termasuk desain logo, pemilihan palet warna, tipografi, dan elemen visual lainnya. Kami juga menyediakan panduan penggunaan merek untuk memastikan konsistensi dalam semua materi pemasaran dan komunikasi bisnis Anda.",
       icon: FaPaintBrush,
       color: "orange",
-      buttonText: "Mulai Branding",
+      buttonText: "Lihat Selengkapnya",
     },
   ];
 
