@@ -196,20 +196,23 @@ export default function TentangKami() {
                 opacity: isVideoInView ? 1 : 0,
               }}
               transition={{ duration: 0.5 }}
-            ></motion.h2>
+            >
+              Video Kami
+            </motion.h2>
             <motion.div
               className="relative w-full pt-[56.25%] rounded-lg overflow-hidden"
               initial={{ opacity: 0 }}
               animate={{ opacity: isVideoInView ? 1 : 0 }}
               transition={{ duration: 1 }}
             >
-              <video
-                className="absolute top-0 left-0 w-full h-full object-cover"
-                controls
-              >
-                <source src="/path/to/your/video.mp4" type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
+              <iframe
+                className="absolute top-0 left-0 w-full h-full"
+                src="https://youtu.be/tTgubImjfrg"
+                title="YouTube video player"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              ></iframe>
             </motion.div>
           </div>
         </section>
