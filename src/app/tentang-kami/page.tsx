@@ -9,6 +9,8 @@ import { motion } from "framer-motion";
 export default function TentangKami() {
   const visiMisiRef = useRef<HTMLDivElement>(null);
   const isVisiMisiInView = useInView(visiMisiRef, { threshold: 0.1 });
+  const videoRef = useRef<HTMLDivElement>(null);
+  const isVideoInView = useInView(videoRef, { threshold: 0.1 });
 
   return (
     <div className="container mx-auto px-4 pt-24 sm:pt-48 pb-16 sm:pb-32">
@@ -142,7 +144,9 @@ export default function TentangKami() {
               </BoxReveal>
               <BoxReveal boxColor="#1b57c5" duration={0.5}>
                 <p className="text-gray-700 text-xl font-sans leading-relaxed">
-                  Menjadi penerbitan terkemuka yang mempermudah proses legalitas bagi individu dan bisnis, memastikan kepatuhan hukum yang cepat dan efisien.
+                  Menjadi penerbitan terkemuka yang mempermudah proses legalitas
+                  bagi individu dan bisnis, memastikan kepatuhan hukum yang
+                  cepat dan efisien.
                 </p>
               </BoxReveal>
             </div>
@@ -159,22 +163,56 @@ export default function TentangKami() {
               <BoxReveal boxColor="#1b57c5" duration={0.5}>
                 <ul className="list-disc list-inside text-gray-700 space-y-4 text-xl font-sans leading-relaxed">
                   <li>
-                    Menyediakan layanan penerbitan legalitas yang transparan dan terpercaya.
+                    Menyediakan layanan penerbitan legalitas yang transparan dan
+                    terpercaya.
                   </li>
                   <li>
-                    Mengedukasi klien tentang pentingnya legalitas dalam berbisnis.
+                    Mengedukasi klien tentang pentingnya legalitas dalam
+                    berbisnis.
                   </li>
                   <li>
                     Mempercepat proses pengajuan izin dengan teknologi inovatif.
                   </li>
                   <li>
-                    Membangun hubungan jangka panjang dengan klien melalui layanan yang berkualitas.
+                    Membangun hubungan jangka panjang dengan klien melalui
+                    layanan yang berkualitas.
                   </li>
                 </ul>
               </BoxReveal>
             </div>
           </div>
         </div>
+      </div>
+
+      <div>
+        {/* Video Section */}
+        <section id="video" className="pt-10 py-16 bg-gray-100" ref={videoRef}>
+          <div className="container mx-auto px-4">
+            <motion.h2
+              className="text-3xl font-bold mb-8 text-center"
+              initial={{ y: -20, opacity: 0 }}
+              animate={{
+                y: isVideoInView ? 0 : -20,
+                opacity: isVideoInView ? 1 : 0,
+              }}
+              transition={{ duration: 0.5 }}
+            ></motion.h2>
+            <motion.div
+              className="relative w-full pt-[56.25%] rounded-lg overflow-hidden"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: isVideoInView ? 1 : 0 }}
+              transition={{ duration: 1 }}
+            >
+              <video
+                className="absolute top-0 left-0 w-full h-full object-cover"
+                controls
+              >
+                <source src="/path/to/your/video.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            </motion.div>
+          </div>
+        </section>
       </div>
     </div>
   );
