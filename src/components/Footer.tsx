@@ -34,7 +34,7 @@ export default function Footer() {
                 href="/form"
                 className="bg-white text-[#09132e] px-6 sm:px-8 py-3 sm:py-4 rounded-full text-lg sm:text-xl font-bold hover:bg-opacity-90 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 hover:scale-105"
               >
-                Konsultasi Sekarang
+                Konsultasi Gratis Sekarang
               </Link>
               <a
                 href="https://wa.me/6289517889100"
@@ -63,7 +63,7 @@ export default function Footer() {
               </div>
 
               <div className="text-center text-white text-sm font-normal">
-                © 2024 EasyIzin. All Rights RafiAkem Reserved.
+                © 2024 EasyIzin. All Rights Reserved.
               </div>
 
               <div className="flex space-x-4">
